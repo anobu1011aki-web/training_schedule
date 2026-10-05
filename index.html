@@ -47,7 +47,6 @@
             overflow: hidden;
         }
 
-        /* ヘッダー */
         .header {
             background: linear-gradient(135deg, #0284c7, #0369a1);
             color: #ffffff;
@@ -78,12 +77,10 @@
             opacity: 0.95;
         }
 
-        /* メインコンテンツ */
         .content {
             padding: 16px;
         }
 
-        /* 集合ハイライト */
         .highlight-box {
             background: #fffbebf8;
             border: 2px solid var(--accent);
@@ -112,7 +109,6 @@
             margin-top: 4px;
         }
 
-        /* 重要なお知らせ */
         .alert-box {
             background: #ecfdf5;
             border: 1px solid #a7f3d0;
@@ -129,7 +125,6 @@
             margin-bottom: 4px;
         }
 
-        /* セクション共通 */
         .section {
             margin-bottom: 24px;
         }
@@ -146,7 +141,6 @@
             border-bottom: 2px solid var(--primary-light);
         }
 
-        /* 前日・当日のチェック */
         .check-card {
             background: var(--bg);
             border-radius: 10px;
@@ -198,7 +192,6 @@
             color: var(--accent);
         }
 
-        /* 持ち物リスト */
         .belongings-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -224,7 +217,6 @@
             color: var(--text-sub);
         }
 
-        /* タイムスケジュール */
         .timeline {
             position: relative;
             padding-left: 20px;
@@ -296,7 +288,6 @@
             line-height: 1.4;
         }
 
-        /* コース図解 */
         .route-card {
             background: #f1f5f9;
             border-radius: 12px;
@@ -359,7 +350,6 @@
             margin: -4px 0 4px 0;
         }
 
-        /* サポート体制（保護者・車運用） */
         .support-box {
             background: #f0f9ff;
             border: 1px solid #bae6fd;
@@ -401,7 +391,6 @@
             line-height: 1.5;
         }
 
-        /* フッター */
         .footer {
             background: var(--bg);
             padding: 16px;
@@ -410,21 +399,11 @@
             color: var(--text-sub);
             border-top: 1px solid var(--border);
         }
-
-        @media (max-width: 360px) {
-            .header h1 {
-                font-size: 1.2rem;
-            }
-            .content {
-                padding: 12px;
-            }
-        }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
-    <!-- ヘッダー -->
     <div class="header">
         <span class="header-badge">トレーニング案内</span>
         <h1>ロードランニング＆<br>ビーチトレーニング</h1>
@@ -432,20 +411,17 @@
     </div>
 
     <div class="content">
-        <!-- 集合ハイライト -->
         <div class="highlight-box">
             <div class="title">📅 集合時間・場所</div>
             <div class="main-info">10/10(土) 午前 8:00</div>
             <div class="sub-info">📍 赤嶺駅（現地集合）</div>
         </div>
 
-        <!-- コース運用のワンポイント -->
         <div class="alert-box">
             <strong>🌴 チーム一丸でのゴールを目指します！</strong>
             高架橋を降りた先の芝生エリアで全員が揃うのを待ち、全員で『ヤシの木ロード』を通って美らSUNビーチへゴールします。
         </div>
 
-        <!-- 前日・当日のチェック -->
         <div class="section">
             <h2 class="section-title">💬 生徒の皆さんへ（準備と体調）</h2>
             
@@ -469,7 +445,6 @@
             </div>
         </div>
 
-        <!-- 持ち物リスト -->
         <div class="section">
             <h2 class="section-title">🎒 持ち物チェックリスト</h2>
             <div class="belongings-grid">
@@ -492,14 +467,13 @@
             </div>
         </div>
 
-        <!-- タイムスケジュール -->
         <div class="section">
             <h2 class="section-title">⏱️ 当日のタイムスケジュール</h2>
             <div class="timeline">
                 <div class="tl-item">
                     <div class="tl-dot"></div>
                     <div class="tl-time">08:00</div>
-                    <div class="tl-content">赤嶺駅 集合・点候・荷物預かり</div>
+                    <div class="tl-content">赤嶺駅 集合・点呼・荷物預かり</div>
                     <div class="tl-desc">個人の荷物をサポートカー（A車）に載せます。監督のバイク/車には給水用2Lペットボトルを積載します。</div>
                 </div>
 
@@ -561,7 +535,6 @@
             </div>
         </div>
 
-        <!-- コース＆給水マップ -->
         <div class="section">
             <h2 class="section-title">🗺️ コース＆給水マップ</h2>
             <div class="route-card">
@@ -602,7 +575,6 @@
             </div>
         </div>
 
-        <!-- サポート体制（保護者・車運用） -->
         <div class="section">
             <h2 class="section-title">🚗 安全管理＆サポート体制</h2>
             <div class="support-box">
@@ -636,7 +608,6 @@
         </div>
     </div>
 
-    <!-- フッター -->
     <div class="footer">
         ご不明な点や心配な点がございましたら、事前に指導者・スタッフへお気軽にお問い合わせください。<br>
         安全を第一に考えて指導・運営いたします。
