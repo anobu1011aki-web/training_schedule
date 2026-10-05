@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10/10(土) ランニング＆ビーチトレーニング 実施要項</title>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-light: #e0f2fe;
+            --primary-dark: #0369a1;
+            --accent: #f59e0b;
+            --accent-light: #fef3c7;
+            --success: #10b981;
+            --success-light: #d1fae5;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --text-sub: #475569;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", MeiRyo, sans-serif;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            word-wrap: break-word;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 500px;
+            background-color: var(--card);
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        /* ヘッダー */
+        .header {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: #ffffff;
+            padding: 24px 16px;
+            text-align: center;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+        }
+
+        .header h1 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 0.85rem;
+            opacity: 0.95;
+        }
+
+        /* メインコンテンツ */
+        .content {
+            padding: 16px;
+        }
+
+        /* 集合ハイライト */
+        .highlight-box {
+            background: #fffbebf8;
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .highlight-box .title {
+            font-size: 0.85rem;
+            color: #b45309;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .highlight-box .main-info {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #78350f;
+        }
+
+        .highlight-box .sub-info {
+            font-size: 0.85rem;
+            color: #92400e;
+            margin-top: 4px;
+        }
+
+        /* 重要なお知らせ */
+        .alert-box {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: #065f46;
+        }
+
+        .alert-box strong {
+            color: #047857;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* セクション共通 */
+        .section {
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        /* 前日・当日のチェック */
+        .check-card {
+            background: var(--bg);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .check-card.morning {
+            border-left-color: var(--accent);
+        }
+
+        .check-card h3 {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .check-list li {
+            font-size: 0.88rem;
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+
+        .check-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .check-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .check-card.morning .check-list li::before {
+            color: var(--accent);
+        }
+
+        /* 持ち物リスト */
+        .belongings-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        .item-box {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 0.88rem;
+        }
+
+        .item-box strong {
+            color: var(--primary-dark);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .item-sub {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        /* タイムスケジュール */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .tl-item {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .tl-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .tl-dot {
+            position: absolute;
+            left: -20px;
+            top: 4px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 0 2px var(--primary-light);
+        }
+
+        .tl-dot.water {
+            background: var(--accent);
+            box-shadow: 0 0 0 2px var(--accent-light);
+        }
+
+        .tl-dot.group {
+            background: #8b5cf6;
+            box-shadow: 0 0 0 2px #ede9fe;
+        }
+
+        .tl-dot.goal {
+            background: var(--success);
+            box-shadow: 0 0 0 2px var(--success-light);
+        }
+
+        .tl-time {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-bottom: 2px;
+        }
+
+        .tl-content {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--text);
+        }
+
+        .tl-desc {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            margin-top: 2px;
+            line-height: 1.4;
+        }
+
+        /* コース図解 */
+        .route-card {
+            background: #f1f5f9;
+            border-radius: 12px;
+            padding: 14px;
+            font-size: 0.85rem;
+        }
+
+        .route-node {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 10px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-bottom: 8px;
+        }
+
+        .route-node.water-node {
+            border-color: #fde68a;
+            background: #fffbeb;
+        }
+
+        .route-node.group-node {
+            border-color: #ddd6fe;
+            background: #f5f3ff;
+        }
+
+        .route-node.goal-node {
+            border-color: #a7f3d0;
+            background: #ecfdf5;
+        }
+
+        .route-tag {
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #ffffff;
+            background: var(--primary);
+            white-space: nowrap;
+        }
+
+        .route-tag.water {
+            background: var(--accent);
+        }
+
+        .route-tag.group {
+            background: #8b5cf6;
+        }
+
+        .route-tag.goal {
+            background: var(--success);
+        }
+
+        .route-arrow {
+            text-align: center;
+            color: var(--text-sub);
+            font-size: 0.8rem;
+            margin: -4px 0 4px 0;
+        }
+
+        /* サポート体制（保護者・車運用） */
+        .support-box {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 14px;
+        }
+
+        .support-box h4 {
+            font-size: 0.9rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .car-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            border: 1px solid #e0f2fe;
+        }
+
+        .car-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .car-title {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .car-desc {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            line-height: 1.5;
+        }
+
+        /* フッター */
+        .footer {
+            background: var(--bg);
+            padding: 16px;
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-sub);
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 360px) {
+            .header h1 {
+                font-size: 1.2rem;
+            }
+            .content {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <!-- ヘッダー -->
+    <div class="header">
+        <span class="header-badge">トレーニング案内</span>
+        <h1>ロードランニング＆<br>ビーチトレーニング</h1>
+        <p>赤嶺駅 〜 豊崎海浜公園 美らSUNビーチ</p>
+    </div>
+
+    <div class="content">
+        <!-- 集合ハイライト -->
+        <div class="highlight-box">
+            <div class="title">📅 集合時間・場所</div>
+            <div class="main-info">10/10(土) 午前 8:00</div>
+            <div class="sub-info">📍 赤嶺駅（現地集合）</div>
+        </div>
+
+        <!-- コース運用のワンポイント -->
+        <div class="alert-box">
+            <strong>🌴 チーム一丸でのゴールを目指します！</strong>
+            高架橋を降りた先の芝生エリアで全員が揃うのを待ち、全員で『ヤシの木ロード』を通って美らSUNビーチへゴールします。
+        </div>
+
+        <!-- 前日・当日のチェック -->
+        <div class="section">
+            <h2 class="section-title">💬 生徒の皆さんへ（準備と体調）</h2>
+            
+            <div class="check-card">
+                <h3>🌙 前日（金曜日の夜）</h3>
+                <ul class="check-list">
+                    <li><strong>早めに寝る：</strong> 睡眠不足は体調不良の原因になります。8時間以上寝ましょう。</li>
+                    <li><strong>水分と夕食：</strong> ごはんをしっかり食べ、水分を補給しておきます。</li>
+                    <li><strong>荷物の準備：</strong> 前のうちに荷物をバッグにまとめておきます。</li>
+                </ul>
+            </div>
+
+            <div class="check-card morning">
+                <h3>☀️ 当日（土曜日の朝）</h3>
+                <ul class="check-list">
+                    <li><strong>朝食を食べる：</strong> 空腹で走ると危険です。必ず食べてきてください。</li>
+                    <li><strong>体調チェック：</strong> 熱、頭痛、お腹の痛み、気分の悪さがないか確認します。</li>
+                    <li><strong>トイレを済ませる：</strong> 出発前に済ませておきましょう。</li>
+                    <li><strong>無理は禁止：</strong> 「体調が変だな」と思ったらスタート前に必ず指導者へ教えてください。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 持ち物リスト -->
+        <div class="section">
+            <h2 class="section-title">🎒 持ち物チェックリスト</h2>
+            <div class="belongings-grid">
+                <div class="item-box">
+                    <strong>👟 ランニングウェア・スニーカー</strong>
+                    <div class="item-sub">走りやすい服・履き慣れた靴で集合してください</div>
+                </div>
+                <div class="item-box">
+                    <strong>👕 全員の着替え・タオル</strong>
+                    <div class="item-sub">練習後のTシャツや下着など（A車でお預かりします）</div>
+                </div>
+                <div class="item-box">
+                    <strong>🏖️ 終了後ビーチに入る人は</strong>
+                    <div class="item-sub">・マリンシューズ（または濡れて良いサンダル）<br>・濡れて良い服（または水着）<br>・濡れた服を入れるビニール袋</div>
+                </div>
+                <div class="item-box">
+                    <strong>🥤 水分補給用ドリンク・帽子・日焼け止め</strong>
+                    <div class="item-sub">水やスポーツドリンク（走行中も監督車・バイクから補充可）</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- タイムスケジュール -->
+        <div class="section">
+            <h2 class="section-title">⏱️ 当日のタイムスケジュール</h2>
+            <div class="timeline">
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-time">08:00</div>
+                    <div class="tl-content">赤嶺駅 集合・点候・荷物預かり</div>
+                    <div class="tl-desc">個人の荷物をサポートカー（A車）に載せます。監督のバイク/車には給水用2Lペットボトルを積載します。</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-time">08:15</div>
+                    <div class="tl-content">ウォーミングアップ・スタート</div>
+                    <div class="tl-desc">安全のため道路左側の歩道を整列してスタートします。</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot water"></div>
+                    <div class="tl-time">08:25頃</div>
+                    <div class="tl-content">【給水1】ローソン 那覇高良店</div>
+                    <div class="tl-desc">水分補給・1回目の体調チェック</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot water"></div>
+                    <div class="tl-time">08:35頃</div>
+                    <div class="tl-content">【給水2】ファミリーマート 小禄バイパス店</div>
+                    <div class="tl-desc">A車・B車が待機。しっかり給水と疲労度チェックを行います。</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot water"></div>
+                    <div class="tl-time">08:45頃</div>
+                    <div class="tl-content">【給水3】瀬長交差点</div>
+                    <div class="tl-desc">信号に従い道路右側（海側）の歩道へ渡ります。給水と安全確認。</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot group"></div>
+                    <div class="tl-time">08:55〜09:10頃</div>
+                    <div class="tl-content">高架橋中間階段 ➔ 芝生エリア（全員集合・待機）</div>
+                    <div class="tl-desc">高架橋の中間階段から公園側へ降ります。早く着いたメンバーも芝生エリアで水分補給をしながら全員の到着を待ちます。</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot goal"></div>
+                    <div class="tl-time">09:15頃</div>
+                    <div class="tl-content">【ゴール】ヤシの木ロード ➔ 美らSUNビーチ到着</div>
+                    <div class="tl-desc">全員が揃った後、ヤシの木ロードを通ってビーチへゴール！しっかりクールダウンを行います。</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-time">09:30〜10:20</div>
+                    <div class="tl-content">ビーチトレーニング（約30〜50分）</div>
+                    <div class="tl-desc">砂浜や芝生エリアでの体幹・補強練習</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot goal"></div>
+                    <div class="tl-time">10:30頃</div>
+                    <div class="tl-content">整理体操・現地解散</div>
+                    <div class="tl-desc">A車から個人荷物を受け取り、お迎え合流または現地解散</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- コース＆給水マップ -->
+        <div class="section">
+            <h2 class="section-title">🗺️ コース＆給水マップ</h2>
+            <div class="route-card">
+                <div class="route-node">
+                    <span class="route-tag">スタート</span>
+                    <div><strong>赤嶺駅（08:00集合）</strong><br><span style="font-size:0.75rem; color:var(--text-sub);">A車へ荷物積み込み・左側歩道を走行</span></div>
+                </div>
+                <div class="route-arrow">↓ 国道331号（小禄バイパス）</div>
+
+                <div class="route-node water-node">
+                    <span class="route-tag water">給水 1</span>
+                    <div><strong>ローソン 那覇高良店</strong></div>
+                </div>
+                <div class="route-arrow">↓</div>
+
+                <div class="route-node water-node">
+                    <span class="route-tag water">給水 2</span>
+                    <div><strong>ファミリーマート 小禄バイパス店</strong><br><span style="font-size:0.75rem; color:var(--text-sub);">A車・B車待機ポイント</span></div>
+                </div>
+                <div class="route-arrow">↓</div>
+
+                <div class="route-node water-node">
+                    <span class="route-tag water">給水 3</span>
+                    <div><strong>瀬長交差点</strong><br><span style="font-size:0.75rem; color:#b45309;">⚠️ 信号で道路右側（海側）へ横断</span></div>
+                </div>
+                <div class="route-arrow">↓ 高架橋（右側歩道）</div>
+
+                <div class="route-node group-node">
+                    <span class="route-tag group">全員待機</span>
+                    <div><strong>高架橋階段降り ➔ 芝生エリア</strong><br><span style="font-size:0.75rem; color:#6b21a8;">全員が揃うまで水分補給して待機</span></div>
+                </div>
+                <div class="route-arrow">↓ 全員揃ったら移動</div>
+
+                <div class="route-node goal-node">
+                    <span class="route-tag goal">ゴール</span>
+                    <div><strong>ヤシの木ロード ➔ 美らSUNビーチ</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- サポート体制（保護者・車運用） -->
+        <div class="section">
+            <h2 class="section-title">🚗 安全管理＆サポート体制</h2>
+            <div class="support-box">
+                <h4>【2台の車＋バイク】で完全バックアップ</h4>
+                
+                <div class="car-card">
+                    <div class="car-title">🚗 サポートカー A車（荷物・設営担当）</div>
+                    <div class="car-desc">
+                        ① 赤嶺駅で全員の個人荷物を預かりスタート。<br>
+                        ② ファミマ小禄バイパス店で待機。<br>
+                        ③ 全員通過後、豊崎海浜公園テニスコート横駐車場へ移動し待機・荷物返却準備。
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-title">🚐 サポートカー B車（救護・搬送担当）</div>
+                    <div class="car-desc">
+                        ① スタート後、ファミマ小禄バイパス店で待機。<br>
+                        ② 「しおさい公園」へ移動し、搬送者がないか待機。<br>
+                        ③ 全員が高架橋を無事通過したことを確認後、美らSUNビーチへ合流。
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-title">🏍️ 監督（バイク / 自動車）</div>
+                    <div class="car-desc">
+                        走者へ並走・後方警戒・ペース管理を行います。積載した2Lペットボトルで、走行中の生徒へ直接給水サポートを行います。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <div class="footer">
+        ご不明な点や心配な点がございましたら、事前に指導者・スタッフへお気軽にお問い合わせください。<br>
+        安全を第一に考えて指導・運営いたします。
+    </div>
+</div>
+
+</body>
+</html>
